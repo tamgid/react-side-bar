@@ -1,33 +1,43 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
-import { BiAnalyse, BiSearch } from "react-icons/bi";
+import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser, FaBook,FaUpload ,FaDownload} from "react-icons/fa";
+import { MdMessage,MdEventBusy } from "react-icons/md";
+import { BiAnalyse, BiSearch,BiCalendarEvent } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
-import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
-import { BsCartCheck } from "react-icons/bs";
+import { AiFillHeart, AiTwotoneFileExclamation,AiOutlineMessage } from "react-icons/ai";
+import { BsCartCheck,BsPencil,BsFileText } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
 const routes = [
   {
     path: "/",
-    name: "Dashboard",
-    icon: <FaHome />,
-  },
-  {
-    path: "/users",
-    name: "Users",
+    name: "Faculty",
     icon: <FaUser />,
   },
   {
-    path: "/messages",
-    name: "Messages",
-    icon: <MdMessage />,
+    path: "/courses",
+    name: "Courses",
+    icon: <FaBook />,
   },
   {
-    path: "/analytics",
-    name: "Analytics",
-    icon: <BiAnalyse />,
+    path: "/leaves",
+    name: "Leaves",
+    icon: <MdEventBusy />,
+  },
+  {
+    path: "/meetings",
+    name: "Meetings",
+    icon: <BiCalendarEvent />,
+  },
+  {
+    path: "/editorials",
+    name: "Editorials",
+    icon: <BsFileText />,
+  },
+  {
+    path: "/chat",
+    name: "Chat",
+    icon: <AiOutlineMessage />,
   },
   {
     path: "/file-manager",
@@ -35,54 +45,16 @@ const routes = [
     icon: <AiTwotoneFileExclamation />,
     subRoutes: [
       {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
+        path: "/upload",
+        name: "Upload ",
+        icon: <FaUpload />,
       },
       {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
-      },
-      {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
+        path: "/download",
+        name: "Download",
+        icon: <FaDownload />,
       },
     ],
-  },
-  {
-    path: "/order",
-    name: "Order",
-    icon: <BsCartCheck />,
-  },
-  {
-    path: "/settings",
-    name: "Settings",
-    icon: <BiCog />,
-    exact: true,
-    subRoutes: [
-      {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
-      },
-      {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
-      },
-      {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
-      },
-    ],
-  },
-  {
-    path: "/saved",
-    name: "Saved",
-    icon: <AiFillHeart />,
   },
 ];
 
@@ -148,7 +120,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  DoSomeCoding
+                  TeachersIMS
                 </motion.h1>
               )}
             </AnimatePresence>
